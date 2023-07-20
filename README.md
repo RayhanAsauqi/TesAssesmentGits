@@ -1,12 +1,12 @@
-# Readme: Balanced Bracket Checker
+# Balanced Bracket Checker
 
-This is a simple JavaScript function to check if a string contains balanced brackets.
+ini contoh implementasi fungsi javascript untuk mengecek jika data string memiliki bracket yang setara (balanced brackets checker).
 
-## Function
+## Fungsi
 
-The function `isBalancedBracket(str)` takes a string `str` as input and returns `"YES"` if the brackets are balanced, and `"NO"` otherwise.
+pertama mendeklarasi sebuah fungsi `isBalancedBracket(str)` dengan menerima input string di dalam fungsi tersebut `str` dan akan mereturn `"YES"` jika bracket yang dimiliki setara, dan jika tidak maka akan mereturn dengan nilai`"NO"`.
 
-### Example
+### Contoh
 
 ```javascript
 console.log(isBalancedBracket("{[()]}")); // Output: YES
@@ -14,30 +14,31 @@ console.log(isBalancedBracket("{[(])}")); // Output: NO
 console.log(isBalancedBracket("{(([])[])[]}")); // Output: YES
 ```
 
-In the first example, `"{[()]}"`, the brackets are balanced, so the output is `"YES"`. In the second example, `"{[(])}"`, the brackets are not balanced, so the output is `"NO"`. In the third example, `"{(([])[])[]}"`, the brackets are balanced, so the output is `"YES"`.
+Pada contoh pertama, `{[()]}`, tanda kurungnya seimbang, sehingga outputnya adalah "YES". Pada contoh kedua, `{[(])}`, tanda kurungnya tidak seimbang, sehingga outputnya adalah "NO". Pada contoh ketiga, `{(([])[])[]}`, tanda kurungnya seimbang, sehingga outputnya adalah "YES".
+## Penerapan
 
-## Implementation
+Fungsi ini menggunakan struktur data tumpukan (stack) untuk mencatat tanda kurung pembuka yang dijumpai saat melintasi string. Untuk setiap tanda kurung penutup, fungsi ini memeriksa apakah tanda kurung pembuka yang sesuai berada di bagian atas tumpukan. Jika tanda kurungnya seimbang, tumpukan akan kosong pada akhir perjalanan.
 
-The function uses a stack data structure to keep track of opening brackets encountered while traversing the string. For each closing bracket, it checks if the corresponding opening bracket is at the top of the stack. If the brackets are balanced, the stack will be empty at the end of the traversal.
 
-The function maintains a set of opening brackets and a map of closing brackets with their corresponding opening brackets to efficiently check for balanced brackets.
+Fungsi tersebut menjaga himpunan (set) dari tanda kurung pembuka dan sebuah peta (map) dari tanda kurung penutup beserta tanda kurung pembuka yang sesuai untuk memeriksa dengan efisien apakah tanda kurung tersebut seimbang.
 
-### Complexity
+### Kompleksitas
 
-The implementation has linear time complexity O(n) since each character in the input string is processed once. The space complexity is also O(n) due to the usage of the stack.
+Implementasi tersebut memiliki kompleksitas waktu linear O(n) karena setiap karakter dalam string masukan diproses sekali. Kompleksitas ruangnya juga O(n) karena penggunaan tumpukan (stack)
 
-### Supported Brackets
+### Tanda Kurung yang Didukung
 
-The function supports the following brackets:
+Fungsi ini mendukung Tanda kurung berikut:
+- Tanda kurung bulat: `( )`
+- Tanda kurung siku: `[ ]`
+- Tanda kurung kurawal: `{ }`
 
-- Round brackets: `( )`
-- Square brackets: `[ ]`
-- Curly brackets: `{ }`
-
-## How to Use
+## Cara Penggunaan
 
 1. Copy the `isBalancedBracket` function into your JavaScript code.
+1.Salin fungsi `isBalacedBracket` kedalam kode javaScript Anda
 2. Call the function with a string containing brackets as the argument.
-3. The function will return `"YES"` if the brackets are balanced, and `"NO"` otherwise.
+2.Panggil fungsi dengan sebuah string yang berisi tanda kurung sebagai argumen.
+3. Fungsi akan mengembalikan nilai `"YES"` jika tanda kurungnya seimbang, dan `"NO"`jika sebaliknya.
 
-Feel free to use and modify this function in your projects to check for balanced brackets!
+
